@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3"
+    tools:context=".activities.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/pvc_blue"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/logo_vn_value" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:src="@drawable/logo_astec" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="50dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/accountTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/pvc_text_input_layout_filled_box"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/pvc_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/id_screen_fonts"
+                android:hint="@string/hint_username"
+                android:paddingLeft="5dp"
+                android:text="@string/hint_admin"
+                android:textSize="14dp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:theme="@style/pvc_text_input_layout_filled_box"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/pvc_blue"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/id_screen_fonts"
+                android:hint="@string/hint_password"
+                android:password="true"
+                android:textSize="14sp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:background="@color/pvc_blue"
+            android:drawableRight="@drawable/ic_baseline_login"
+            android:fontFamily="@font/id_screen_fonts"
+            android:padding="10dp"
+            android:text="Đăng nhập"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/loginFinger"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_fingerprint"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:scaleType="fitXY"
+            android:src="@drawable/aura_mask" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_astec"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

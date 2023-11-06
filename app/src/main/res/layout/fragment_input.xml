@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/layout_camera_img"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp">
+
+        <FrameLayout
+            android:id="@+id/layout_preview_camera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/preview_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/img_flash"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:src="@drawable/ic_flash_off"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layout_img_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_camera_img"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_2sdp" />
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recycler_view"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:weightSum="2">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:theme="@style/pvc_text_input_layout_filled_box"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/pvc_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@drawable/edt_text_color"
+                android:enabled="false"
+                android:id="@+id/edt_input_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/id_screen_fonts"
+                android:hint="@string/hint_input_time"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:theme="@style/pvc_text_input_layout_filled_box"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/pvc_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@drawable/edt_text_color"
+                android:enabled="false"
+                android:id="@+id/edt_db_plate_numbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/id_screen_fonts"
+                android:hint="@string/hint_db_plate_numbers"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_time"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:weightSum="2">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:theme="@style/pvc_text_input_layout_filled_box"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/pvc_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@drawable/edt_text_color"
+                android:enabled="false"
+                android:id="@+id/edt_ca_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/id_screen_fonts"
+                android:hint="@string/hint_ca_number"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:theme="@style/pvc_text_input_layout_filled_box"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/pvc_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColor="@drawable/edt_text_color"
+                android:id="@+id/edt_input_plate_numbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/id_screen_fonts"
+                android:hint="@string/hint_input_plate_numbers"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:weightSum="2">
+
+        <Button
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:id="@+id/btn_skip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_skip"
+            android:drawableRight="@drawable/ic_cancel"
+            android:fontFamily="@font/id_screen_fonts"
+            android:padding="5dp"
+            android:text="@string/btn_skip"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp" />
+
+        <Button
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_submit"
+            android:drawableRight="@drawable/ic_baseline_login"
+            android:fontFamily="@font/id_screen_fonts"
+            android:padding="5dp"
+            android:text="@string/btn_submit_input"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp" />
+    </LinearLayout>
+</RelativeLayout>
